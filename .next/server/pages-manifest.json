@@ -1,0 +1,11 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/": "pages/index.js",
+  "/api/getSkills": "pages/api/getSkills.js",
+  "/api/getExperience": "pages/api/getExperience.js",
+  "/api/getSocials": "pages/api/getSocials.js",
+  "/api/getProjects": "pages/api/getProjects.js",
+  "/api/getPageInfo": "pages/api/getPageInfo.js"
+}
