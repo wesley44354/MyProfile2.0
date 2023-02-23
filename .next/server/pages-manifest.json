@@ -2,10 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/api/getPageInfo": "pages/api/getPageInfo.js",
-  "/api/getExperience": "pages/api/getExperience.js",
-  "/api/getSkills": "pages/api/getSkills.js",
-  "/api/getProjects": "pages/api/getProjects.js",
-  "/api/getSocials": "pages/api/getSocials.js",
   "/": "pages/index.js"
 }
