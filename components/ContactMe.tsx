@@ -69,9 +69,9 @@ export default function ContactMe({}: Props) {
           <textarea 
             {...register('message')}          
             placeholder='Message'
-            className='contactInput' 
+            className='contactInput scrollbar-thin scrollbar-thumb-[#8257e5]/80 scrollbar-track-gray-400/40' 
           />
-          <button type='submit' className='bg-[#8257e5] text-sm md:text-2xl px-1 py-1 sm:px-4 sm:py-2 md:px-5 md:py-3 rounded-sm text-black font-bold '>Submit</button>
+          <button type='submit' className='bg-[#8257e5] text-sm md:text-2xl px-1 py-1 sm:px-4 sm:py-2 md:px-5 md:py-3 rounded-lg text-black font-bold '>Submit</button>
         </form>
       </div>
     </div>

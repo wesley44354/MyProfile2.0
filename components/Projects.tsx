@@ -24,7 +24,7 @@ export default function Projects({projects}: Props) {
         Projects
       </h3>
 
-      <div className=' h-[90%]  relative w-[90%] flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-thumb-[#8257e5]/80 scrollbar-track-gray-400/40'>
+      <div className=' h-[90%]  relative w-[90%] flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-thumb-[#8257e5]/80 scrollbar-track-gray-400/40 '>
         {projects?.map((project, i) => (
           <div key={project._id} className='w-screen flex-shrink-0 snap-center flex flex-col md:space-y-5 items-center justify-center p-30  md:p-44 h-screen'>
             <motion.img 
