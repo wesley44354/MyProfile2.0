@@ -48,7 +48,7 @@ export default function Home({pageInfo, experiences, skills, projects, socials}:
       </section>
 
       <section id='contact' className='snap-end'>
-        <ContactMe />
+        <ContactMe pageInfo={pageInfo}/>
       </section>
 
       <Link href="#hero">
