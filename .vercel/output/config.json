@@ -61,7 +61,7 @@
       "handle": "hit"
     },
     {
-      "src": "/_next/static/(?:[^/]+/pages|pages|chunks|runtime|css|image|media|6s3cSTmcmCHVU7cRjtF_F)/.+",
+      "src": "/_next/static/(?:[^/]+/pages|pages|chunks|runtime|css|image|media|M4nzlwHy6h0TBqpNhJOub)/.+",
       "headers": {
         "cache-control": "public,max-age=31536000,immutable"
       },
@@ -135,5 +135,9 @@
       "path": "500",
       "contentType": "text/html; charset=utf-8"
     }
-  }
+  },
+  "framework": {
+    "version": "13.0.6"
+  },
+  "crons": []
 }

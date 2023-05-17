@@ -170,7 +170,7 @@ react_hook_form__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.t
 
 
 
-function ContactMe({}) {
+function ContactMe({ pageInfo  }) {
     const { register , handleSubmit  } = (0,react_hook_form__WEBPACK_IMPORTED_MODULE_2__.useForm)();
     const onSubmit = (formData)=>{
         window.location.href = `mailto:wesleyalvesdeveloper99@gmail.com?subject=${formData.subject}&body=Oi, meu nome é ${formData.name}. ${formData.message} (${formData.email})`;
@@ -208,7 +208,7 @@ function ContactMe({}) {
                                     }),
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
                                         className: "text-sm md:text-1xl xl:text-2xl",
-                                        children: "+55 67 99888-7913"
+                                        children: pageInfo.phoneNumber
                                     })
                                 ]
                             }),
@@ -220,7 +220,7 @@ function ContactMe({}) {
                                     }),
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
                                         className: "text-sm md:text-1xl xl:text-2xl",
-                                        children: "wesleyalvesdeveloper99@gmail.com"
+                                        children: pageInfo.email
                                     })
                                 ]
                             }),
@@ -232,7 +232,7 @@ function ContactMe({}) {
                                     }),
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
                                         className: "text-sm md:text-1xl xl:text-2xl",
-                                        children: "123 Developer Lane"
+                                        children: pageInfo.address
                                     })
                                 ]
                             })
@@ -268,11 +268,11 @@ function ContactMe({}) {
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("textarea", {
                                 ...register("message"),
                                 placeholder: "Message",
-                                className: "contactInput"
+                                className: "contactInput scrollbar-thin scrollbar-thumb-[#8257e5]/80 scrollbar-track-gray-400/40"
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
                                 type: "submit",
-                                className: "bg-[#8257e5] text-sm md:text-2xl px-1 py-1 sm:px-4 sm:py-2 md:px-5 md:py-3 rounded-sm text-black font-bold ",
+                                className: "bg-[#8257e5] text-sm md:text-2xl px-1 py-1 sm:px-4 sm:py-2 md:px-5 md:py-3 rounded-lg text-black font-bold ",
                                 children: "Submit"
                             })
                         ]
@@ -282,6 +282,7 @@ function ContactMe({}) {
         ]
     });
 }
+"";
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });
@@ -509,7 +510,7 @@ function Projects({ projects  }) {
                 children: "Projects"
             }),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                className: " h-[90%] relative w-[90%] flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-thumb-[#8257e5]/80 scrollbar-track-gray-400/40",
+                className: " h-[90%] relative w-[90%] flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-thumb-[#8257e5]/80 scrollbar-track-gray-400/40 ",
                 children: projects?.map((project, i)=>/*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                         className: "w-screen flex-shrink-0 snap-center flex flex-col md:space-y-5 items-center justify-center p-30 md:p-44 h-screen",
                         children: [
@@ -614,14 +615,17 @@ function Skill({ skill , directionLeft  }) {
         children: [
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                 src: (0,_sanity__WEBPACK_IMPORTED_MODULE_2__/* .urlFor */ .u)(skill?.image).url(),
-                className: " object-cover p-5 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 xl:h-32 xl:w-32 filter group-hover:grayscale transition duration-300 ease-in-out"
+                className: " object-cover p-5 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 xl:h-32 xl:w-32 filter group-hover:bg-grayscale transition duration-300 ease-in-out"
             }),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                className: "absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out group-hover:[#40335e] w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 xl:h-32 xl:w-32 rounded-full",
+                className: "absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out group-hover:bg-white/20 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 xl:h-32 xl:w-32 rounded-full",
                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                     className: "flex items-center justify-center h-full",
                     children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
-                        className: "text-xl md:text-3xl font-bold text-black opacity-100",
+                        className: "text-xl md:text-3xl font-bold opacity-100",
+                        style: {
+                            color: "black"
+                        },
                         children: [
                             skill?.progress,
                             "%"
@@ -787,12 +791,14 @@ function Home({ pageInfo , experiences , skills , projects , socials  }) {
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("section", {
                 id: "contact",
                 className: "snap-end",
-                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_ContactMe__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {})
+                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_ContactMe__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
+                    pageInfo: pageInfo
+                })
             }),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_2___default()), {
                 href: "#hero",
                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("footer", {
-                    className: "sticky bottom-5 w-full cursor-pointer",
+                    className: "sticky bottom-5 w-full cursor-pointer ",
                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                         className: "flex items-center justify-center",
                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {

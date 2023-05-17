@@ -2,11 +2,14 @@
   "type": "Prerender",
   "expiration": 10,
   "group": 1,
-  "bypassToken": "a650fc610e77f29a273bf51c425e8450",
+  "bypassToken": "2e21d158eea8040bfe91b63e9c47442a",
   "fallback": {
     "type": "FileFsRef",
     "mode": 33188,
     "fsPath": "index.prerender-fallback.html"
+  },
+  "initialHeaders": {
+    "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch"
   },
   "allowQuery": []
 }
