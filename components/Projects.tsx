@@ -24,7 +24,7 @@ export default function Projects({projects}: Props) {
         Projects
       </h3>
 
-      <div className=' h-[90%]  relative w-[90%] flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-thumb-[#8257e5]/80 scrollbar-track-gray-400/40 '>
+      <div className=' h-[90%]  relative w-[90%]  flex overflow-x-scroll cursor-pointer overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-thumb-[#8257e5]/80 scrollbar-track-gray-400/40 '>
         {projects?.map((project, i) => (
           <div key={project._id} className='w-screen flex-shrink-0 snap-center flex flex-col md:space-y-5 items-center justify-center p-30  md:p-44 h-screen'>
             <motion.img 
@@ -43,12 +43,17 @@ export default function Projects({projects}: Props) {
                 once: true
               }}
               src={urlFor(project.image).url()} alt="" 
-              className='h-32 w-60 sm:h-48 sm:w-[360px] xl:h-64 xl:w-[480px]'
+              className='h-36 w-60 sm:h-48 sm:w-[360px] xl:h-64 xl:w-[480px]'
             />
-            <div className='space-y-8 px-0 md-px-40 max-w-6xl'>
-              <h4 className='text-3xl md:text-4xl font-semibold text-center'>
+
+            <div className='space-y-5 px-0 md-px-40 max-w-6xl'>
+
+              <a href={project.linkToBuild} target='_blank' className=' italic text-center text-xs md:text-sm underline decoration-[#8257e5]/50 hover:cursor-pointer hover:animate-pulse'>
+                <h1>Clique aqui para ver o projeto</h1>
+              </a>
+              <h4 className=' m-0 text-3xl md:text-4xl font-semibold text-center'>
                 <span className='text-lg md:text-xl underline decoration-[#8257e5]/50'>
-                  Estudando {i + 1} of {projects.length}:{" "}{project?.title}
+                  Project {i + 1} of {projects.length}:{" "}{project?.title}
                 </span> 
               </h4>
 

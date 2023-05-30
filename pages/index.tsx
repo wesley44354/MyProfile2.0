@@ -51,7 +51,7 @@ export default function Home({pageInfo, experiences, skills, projects, socials}:
         <ContactMe pageInfo={pageInfo}/>
       </section>
 
-      <Link href="#hero">
+      {/* <Link href="#hero">
         <footer className='sticky bottom-5 w-full cursor-pointer '>
           <div className='flex items-center justify-center'>
             <img
@@ -61,7 +61,7 @@ export default function Home({pageInfo, experiences, skills, projects, socials}:
             />
           </div>
         </footer>
-      </Link>
+      </Link> */}
 
     </div>
   )
