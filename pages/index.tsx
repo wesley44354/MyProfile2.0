@@ -14,6 +14,24 @@ import { fetchProjects } from '../utils/fetchProjects'
 import { fetchSkills } from '../utils/fetchSkills'
 import { fetchSocials } from '../utils/fetchSocials'
 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBcStnBasEq_rU1TUUogjaQyqZ1BS2lXGY",
+  authDomain: "myprofile2-7eb49.firebaseapp.com",
+  projectId: "myprofile2-7eb49",
+  storageBucket: "myprofile2-7eb49.appspot.com",
+  messagingSenderId: "539713434358",
+  appId: "1:539713434358:web:5585d5741ee45e6294f2d7"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
 type Props = {
   pageInfo: PageInfo,
   experiences: Experience[],
