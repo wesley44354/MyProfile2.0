@@ -34,17 +34,17 @@ export default function ContactMe({ pageInfo }: Props) {
         <div className='space-y-1 md:space-y-2'>
           <div className='flex items-center space-x-5 justify-center'>
             <PhoneIcon className='text-[#8257e5] h-7 w-7 animate-pulse'/>
-            <p className='text-sm md:text-1xl xl:text-2xl'>{pageInfo.phoneNumber}</p>
+            <p className='text-sm md:text-1xl xl:text-2xl'>{pageInfo?.phoneNumber}</p>
           </div>
 
           <div className='flex items-center space-x-5 justify-center'>
             <EnvelopeIcon className='text-[#8257e5] h-7 w-7 animate-pulse'/>
-            <p className='text-sm md:text-1xl xl:text-2xl'>{pageInfo.email}</p>
+            <p className='text-sm md:text-1xl xl:text-2xl'>{pageInfo?.email}</p>
           </div>
 
           <div className='flex items-center space-x-5 justify-center'>
             <MapPinIcon className='text-[#8257e5] h-7 w-7 animate-pulse'/>
-            <p className='text-sm md:text-1xl xl:text-2xl'>{pageInfo.address}</p>
+            <p className='text-sm md:text-1xl xl:text-2xl'>{pageInfo?.address}</p>
           </div>
         </div>
 

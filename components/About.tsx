@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion'
-import { urlFor } from '../sanity'
-import { PageInfo } from '../typings'
+import { motion } from 'framer-motion';
+import { urlFor } from '../sanity';
+import { PageInfo } from '../typings';
 
 type Props = {
   pageInfo: PageInfo
@@ -39,8 +39,8 @@ export default function About({pageInfo}: Props) {
         viewport={{
           once: true
         }}
+        src={urlFor(pageInfo?.profilePic).url()} alt="" 
         className="-mb-28 md:-mb-20 flex-shrink-0 w-48 h-48 sm:w-56 sm:h-56 object-center md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]"
-        src={urlFor(pageInfo?.profilePic).url()}
       />
 
       <div className='space-y-10 px-0 md:px-10 '>

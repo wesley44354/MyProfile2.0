@@ -24,12 +24,11 @@ export default function Hero({ pageInfo }: Props) {
     <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
       <BackgroundCircles />
       <img 
+        src={"https://cdn.sanity.io/images/afv0f5cv/production/dabaecd592e87ae2635415343d748314f2d37cc9-840x840.png"} 
         className='relative rounded-full h-32 w-32 mx-auto object-cover'
         width={128}
         height={128}
         color="#000000"
-        src={urlFor(pageInfo?.heroImage).url()}
-        alt="Foto da logo" 
       />
       <div className='z-20'>
         <h2 className='text-[10px] sm:text-xs md:text-sm uppercase text-gray-500 pb-4 tracking-[10px] sm:tracking-[12px] md:tracking-[15px]' >{pageInfo?.role}</h2>

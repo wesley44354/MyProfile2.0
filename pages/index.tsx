@@ -7,40 +7,21 @@ import Header from '../components/Header'
 import Hero from '../components/Hero'
 import Projects from '../components/Projects'
 import Skills from '../components/Skills'
-import { Experience, PageInfo, Project, Skill, Social } from '../typings'
-import { fetchExperiences } from '../utils/fetchExperiences'
+import { PageInfo, Project, Skill, Social } from '../typings'
 import { fetchPageInfo } from '../utils/fetchPageInfo'
 import { fetchProjects } from '../utils/fetchProjects'
 import { fetchSkills } from '../utils/fetchSkills'
 import { fetchSocials } from '../utils/fetchSocials'
 
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyBcStnBasEq_rU1TUUogjaQyqZ1BS2lXGY",
-  authDomain: "myprofile2-7eb49.firebaseapp.com",
-  projectId: "myprofile2-7eb49",
-  storageBucket: "myprofile2-7eb49.appspot.com",
-  messagingSenderId: "539713434358",
-  appId: "1:539713434358:web:5585d5741ee45e6294f2d7"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
 
 type Props = {
   pageInfo: PageInfo,
-  experiences: Experience[],
   skills: Skill[],
   projects: Project[],
   socials: Social[]
 }
 
-export default function Home({pageInfo, experiences, skills, projects, socials}: Props) {
+export default function Home({pageInfo, skills, projects, socials}: Props) {
   return (
     <div className='bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-thumb-[#8257e5]/80 scrollbar-track-gray-400/40'>
       <Head>
@@ -53,9 +34,7 @@ export default function Home({pageInfo, experiences, skills, projects, socials}:
         <Hero pageInfo={pageInfo} />
       </section>
 
-      <section id='about' className='snap-center'>
-        <About pageInfo={pageInfo} /> 
-      </section>
+ 
 
       <section id='skills' className='snap-center'>
         <Skills skills={skills} /> 
@@ -69,7 +48,7 @@ export default function Home({pageInfo, experiences, skills, projects, socials}:
         <ContactMe pageInfo={pageInfo}/>
       </section>
 
-      {/* <Link href="#hero">
+      <Link href="#hero">
         <footer className='sticky bottom-5 w-full cursor-pointer '>
           <div className='flex items-center justify-center'>
             <img
@@ -79,30 +58,28 @@ export default function Home({pageInfo, experiences, skills, projects, socials}:
             />
           </div>
         </footer>
-      </Link> */}
+      </Link>
 
     </div>
   )
 }
 
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
-  const pageInfo: PageInfo = await fetchPageInfo();
-  const experiences: Experience[] = await fetchExperiences();
-  const skills: Skill[] = await fetchSkills();
-  const projects: Project[] = await fetchProjects();
-  const socials: Social[] = await fetchSocials();
+// export const getStaticProps: GetStaticProps<Props> = async () => {
+//   const pageInfo: PageInfo = await fetchPageInfo();
+//   const skills: Skill[] = await fetchSkills();
+//   const projects: Project[] = await fetchProjects();
+//   const socials: Social[] = await fetchSocials();
 
-  return{
-    props: {
-      pageInfo,
-      experiences,
-      skills,
-      projects,
-      socials
-    },
+//   return{
+//     props: {
+//       pageInfo,
+//       skills,
+//       projects,
+//       socials
+//     },
 
-    revalidate: 10
-  }
+//     revalidate: 10
+//   }
 
-}
+// }
