@@ -1,14 +1,61 @@
 import { motion } from 'framer-motion';
 import { urlFor } from '../sanity';
 import { Experience } from '../typings';
+import React, { useEffect, useState } from 'react';
+
+
 
 type Props = {
   experience: Experience
 };
 
 export default function ExperienceCard({experience}: Props) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    function handleResize() {
+      setIsMobile(window.innerWidth < 768);
+    }
+
+    handleResize(); // Call it initially
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+
   return (
     <article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[300px] xs:w-[320px] sm:w-[360px] md:w-[400px] xl:w-[500px] snap-center bg-[#292929] p-10  hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden'>
+      
+      {isMobile 
+      ? 
+        <img 
+          className='w-20 h-20 md:w-28 md:h-28 rounded-full xl:w-[100px] xl:h-[100px] object-cover object-center'
+          src={urlFor(experience?.companyImage).url()}  
+        />
+      :
+      <motion.img 
+        initial={{
+          y: -100,
+          opacity: 0
+        }}
+        transition={{
+          duration: 1.2
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0
+        }}
+        viewport={{
+          once: true
+        }}
+        className='w-20 h-20 md:w-28 md:h-28 rounded-full xl:w-[100px] xl:h-[100px] object-cover object-center'
+        src={urlFor(experience?.companyImage).url()}  
+       />
+      }
+      
       <motion.img 
         initial={{
           y: -100,
