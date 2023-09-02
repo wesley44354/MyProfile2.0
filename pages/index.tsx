@@ -13,6 +13,9 @@ import { fetchProjects } from '../utils/fetchProjects'
 import { fetchSkills } from '../utils/fetchSkills'
 import { fetchSocials } from '../utils/fetchSocials'
 
+import { WhatsappLogo } from 'phosphor-react'
+
+
 
 type Props = {
   pageInfo: PageInfo,
@@ -57,6 +60,16 @@ export default function Home({pageInfo, skills, projects, socials}: Props) {
           </div>
         </footer>
       </Link>
+
+      <WhatsappLogo />
+
+      {/* <Link href="https://api.whatsapp.com/send?phone=67998887913" target='_blank'>
+        <footer className='sticky bottom-0 w-full cursor-pointer flex justify-end p-5'>
+          <div className='flex items-center justify-center h-11 w-11 p-1 bg-green-600 rounded-full  hover:animate-pulse border-solid border-white border-1'>
+              <WhatsappLogo  className='h-9 w-9' />
+          </div>
+        </footer>
+      </Link> */}
 
     </div>
   )
