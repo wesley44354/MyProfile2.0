@@ -61,8 +61,6 @@ export default function Home({pageInfo, skills, projects, socials}: Props) {
         </footer>
       </Link>
 
-      <WhatsappLogo />
-
       {/* <Link href="https://api.whatsapp.com/send?phone=67998887913" target='_blank'>
         <footer className='sticky bottom-0 w-full cursor-pointer flex justify-end p-5'>
           <div className='flex items-center justify-center h-11 w-11 p-1 bg-green-600 rounded-full  hover:animate-pulse border-solid border-white border-1'>
