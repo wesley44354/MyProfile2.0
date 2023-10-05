@@ -30,7 +30,7 @@ export default function Projects({projects}: Props) {
       <div
         className='flex flex-col relative overflow-hidden h-screen  md:flex-row max-w-full justify-evenly mx-auto items-center z-0 '
       >
-        <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl text-center'>
+        <h3 className='absolute ml-5 top-24 uppercase tracking-[20px] text-gray-500 text-2xl text-center'>
           Projects
         </h3>
 
@@ -39,7 +39,7 @@ export default function Projects({projects}: Props) {
             <div key={project._id} className='w-screen flex-shrink-0  flex flex-col md:space-y-5 items-center justify-center p-30  md:p-44 h-screen'>
               <img 
                 src={urlFor(project.image).url()} alt="" 
-                className='h-36 w-60 sm:h-48 sm:w-[360px] xl:h-64 xl:w-[480px] snap-center'
+                className='h-36 w-60 sm:h-[240px] sm:w-[360px] xl:h-64 xl:w-[480px] snap-center'
               />
 
               <div className='space-y-5 px-0 md-px-40 max-w-6xl'>
@@ -88,7 +88,7 @@ export default function Projects({projects}: Props) {
     }}
     className='flex flex-col relative overflow-hidden h-screen  md:flex-row max-w-full justify-evenly mx-auto items-center z-0 '
   >
-    <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl text-center '>
+    <h3 className='absolute  ml-5 top-24 uppercase tracking-[20px] text-gray-500 text-2xl text-center '>
       Projects
     </h3>
 
@@ -113,7 +113,7 @@ export default function Projects({projects}: Props) {
             
             
             src={urlFor(project.image).url()} alt="" 
-            className='h-36 w-60 sm:h-48 sm:w-[360px] xl:h-65 xl:w-[460px] snap-center'
+            className='h-36 w-36 sm:h-[240px] sm:w-[360px] xl:h-[260px] xl:w-[400px] snap-center'
           />
 
           <div className='space-y-5 px-0 md-px-40 max-w-6xl'>
