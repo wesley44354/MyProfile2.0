@@ -39,7 +39,7 @@ export default function Projects({projects}: Props) {
             <div key={project._id} className='w-screen flex-shrink-0  flex flex-col md:space-y-5 items-center justify-center p-30  md:p-44 h-screen'>
               <img 
                 src={urlFor(project.image).url()} alt="" 
-                className='h-36 w-60 sm:h-[240px] sm:w-[360px] xl:h-64 xl:w-[480px] snap-center'
+                className='aspect-auto w-64 sm:w-[360px] xl:w-[480px] snap-center'
               />
 
               <div className='space-y-5 px-0 md-px-40 max-w-6xl'>
@@ -113,7 +113,7 @@ export default function Projects({projects}: Props) {
             
             
             src={urlFor(project.image).url()} alt="" 
-            className='h-36 w-36 sm:h-[240px] sm:w-[360px] xl:h-[260px] xl:w-[400px] snap-center'
+            className='  w-36  sm:w-[260px]  xl:w-[340px] snap-center'
           />
 
           <div className='space-y-5 px-0 md-px-40 max-w-6xl'>

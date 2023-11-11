@@ -1,19 +1,17 @@
 import type { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
-import About from '../components/About'
 import ContactMe from '../components/ContactMe'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import Projects from '../components/Projects'
 import Skills from '../components/Skills'
-import { PageInfo, Project, Skill, Social } from '../typings'
+import { Experience, PageInfo, Project, Skill, Social } from '../typings'
 import { fetchPageInfo } from '../utils/fetchPageInfo'
 import { fetchProjects } from '../utils/fetchProjects'
 import { fetchSkills } from '../utils/fetchSkills'
 import { fetchSocials } from '../utils/fetchSocials'
 
-import { WhatsappLogo } from 'phosphor-react'
 
 
 
@@ -24,10 +22,13 @@ type Props = {
   socials: Social[]
 }
 
-export default function Home({pageInfo, skills, projects, socials}: Props) {
+export default function Home({pageInfo, skills, projects, socials }: Props) {
+
   return (
     <div className='bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory  overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-thumb-[#8257e5]/80 scrollbar-track-gray-400/40'>
       <Head>
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon16x16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon32x32.png" />
         <title>{`${pageInfo?.name} Portfolio`} </title>
       </Head>
 
@@ -41,6 +42,7 @@ export default function Home({pageInfo, skills, projects, socials}: Props) {
         <Skills skills={skills} /> 
       </section>
 
+
       <section id="project" className='snap-center'>
         <Projects projects={projects}/>
       </section>
@@ -48,18 +50,18 @@ export default function Home({pageInfo, skills, projects, socials}: Props) {
       <section id='contact' className='snap-end'>
         <ContactMe pageInfo={pageInfo}/>
       </section>
-
+{/* 
       <Link href="#hero">
         <footer className='sticky bottom-0 w-full cursor-pointer '>
-          <div className='flex items-center justify-center'>
-            <img
-              className='h-10 w-10 filter grayscale hover:grayscale-0'
-              src="https://www.imagemhost.com.br/images/2022/12/15/Logo.png"
+          <div className='flex items-center justify-center '>
+            <Image
+              className='h-10 w-10 filter grayscale hover:grayscale-0 rounded-full'
+              src={require("../public/logo.png")}
               alt=""
             />
           </div>
         </footer>
-      </Link>
+      </Link> */}
 
       {/* <Link href="https://api.whatsapp.com/send?phone=67998887913" target='_blank'>
         <footer className='sticky bottom-0 w-full cursor-pointer flex justify-end p-5'>
@@ -85,7 +87,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       pageInfo,
       skills,
       projects,
-      socials
+      socials,
     },
 
     revalidate: 10

@@ -27,7 +27,7 @@ export default function ExperienceCard({experience}: Props) {
 
 
   return (
-    <article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[300px] xs:w-[320px] sm:w-[360px] md:w-[400px] xl:w-[500px] snap-center bg-[#292929] p-10  hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden'>
+    <article className='flex flex-col bg-red-700 w-full rounded-lg items-center space-y-7 flex-shrink-0 xs:w-[320px] sm:w-[360px] md:w-[400px] xl:w-[500px] snap-center bg-[#292929] p-10  hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden'>
       
       {isMobile 
       ? 
@@ -80,11 +80,14 @@ export default function ExperienceCard({experience}: Props) {
         <p className='font-bold text-xl sm:text-xl md:text-2xl mt-1'>Wesley Alves</p>
         <div className='flex sm:space-x-1 sm:my-1  md:space-x-2 md:my-2'>
           {experience.technologies.map((technology) => (
+            technology?.image != undefined ?
             <img 
-              key={technology._id}
-              src={urlFor(technology.image).url()} 
+              key={technology?._id}
+              src={technology?.image != undefined ? urlFor(technology.image).url() : ''} 
               className="h-10 w-10 rounded-full"
             />
+            :
+            <></>
           ))}
         </div>
         <p className='uppercase text-sm sm:text-base md:text-1xl   py-1 sm:py-2 md:py-3 text-gray-300'>
