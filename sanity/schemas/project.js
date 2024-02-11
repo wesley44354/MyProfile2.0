@@ -12,6 +12,11 @@ export default defineType({
       type: 'string'
     },
     {
+      name: 'isMobile',
+      title: 'É Mobile',
+      type: 'boolean',
+    },
+    {
       name: 'image',
       title: 'Image',
       type: 'image',
@@ -29,6 +34,16 @@ export default defineType({
       title: 'Technologies',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'skill' } }]
+    },
+    {
+      name: 'linkToBuildApple',
+      title: 'linkToBuildApple',
+      type: 'url',
+    },
+    {
+      name: 'linkToBuildPlayStore',
+      title: 'linkToBuildPlayStore',
+      type: 'url',
     },
     {
       name: 'linkToBuild',

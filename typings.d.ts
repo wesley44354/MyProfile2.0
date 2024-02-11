@@ -10,7 +10,7 @@ interface Image {
   asset: {
     _ref: string;
     _type: "reference";
-  }; 
+  };
 }
 
 export interface PageInfo extends SanityBody {
@@ -43,9 +43,9 @@ export interface Experience extends SanityBody {
   _type: "experience";
   company: string;
   companyImage: Image;
-  dataStarted: date;
+  dateStarted: date;
   dateEnded: date;
-  isCurrentWorkingHere: boolean;
+  isCurrentlyWorkingHere: boolean;
   jobTitle: string;
   points: string[];
   technologies: Technology[];
@@ -58,9 +58,10 @@ export interface Project extends SanityBody {
   linkToBuild: string;
   summary: string;
   technologies: Technology[];
-
+  isMobile: boolean;
+  linkToBuildPlayStore: string;
+  linkToBuildApple: string;
 }
-
 
 export interface Social extends SanityBody {
   _type: "social";
