@@ -12,7 +12,7 @@ export default function WorkExperience({ experiences }: Props) {
 
   useEffect(() => {
     function handleResize() {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth < 1000);
     }
 
     handleResize();

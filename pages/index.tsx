@@ -1,63 +1,73 @@
-import type { GetStaticProps } from 'next'
-import Head from 'next/head'
-import Link from 'next/link'
-import ContactMe from '../components/ContactMe'
-import Header from '../components/Header'
-import Hero from '../components/Hero'
-import Projects from '../components/Projects'
-import Skills from '../components/Skills'
-import { Experience, PageInfo, Project, Skill, Social } from '../typings'
-import { fetchPageInfo } from '../utils/fetchPageInfo'
-import { fetchProjects } from '../utils/fetchProjects'
-import { fetchSkills } from '../utils/fetchSkills'
-import { fetchSocials } from '../utils/fetchSocials'
-import WorkExperience from '../components/WorkExperience'
-import { fetchExperiences } from '../utils/fetchExperiences'
-
-
-
+import type { GetStaticProps } from "next";
+import Head from "next/head";
+import Link from "next/link";
+import ContactMe from "../components/ContactMe";
+import Header from "../components/Header";
+import Hero from "../components/Hero";
+import Projects from "../components/Projects";
+import Skills from "../components/Skills";
+import { Experience, PageInfo, Project, Skill, Social } from "../typings";
+import { fetchPageInfo } from "../utils/fetchPageInfo";
+import { fetchProjects } from "../utils/fetchProjects";
+import { fetchSkills } from "../utils/fetchSkills";
+import { fetchSocials } from "../utils/fetchSocials";
+import WorkExperience from "../components/WorkExperience";
+import { fetchExperiences } from "../utils/fetchExperiences";
 
 type Props = {
-  pageInfo: PageInfo,
-  skills: Skill[],
-  projects: Project[],
-  socials: Social[]
-  experiences: Experience[]
-}
+  pageInfo: PageInfo;
+  skills: Skill[];
+  projects: Project[];
+  socials: Social[];
+  experiences: Experience[];
+};
 
-export default function Home({ pageInfo, skills, projects, socials, experiences }: Props) {
-
+export default function Home({
+  pageInfo,
+  skills,
+  projects,
+  socials,
+  experiences,
+}: Props) {
   return (
-    <div className='bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory  overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-thumb-[#8257e5]/80 scrollbar-track-gray-400/40'>
+    <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory  overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-thumb-[#8257e5]/80 scrollbar-track-gray-400/40">
       <Head>
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon16x16.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon32x32.png" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon16x16.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon32x32.png"
+        />
         <title>{`${pageInfo?.name} Portfolio`} </title>
       </Head>
 
       <Header socials={socials} />
 
-      <section id='hero' className='snap-start'>
+      <section id="hero" className="snap-start">
         <Hero pageInfo={pageInfo} />
       </section>
 
-      <section id='skills' className='snap-center'>
+      <section id="skills" className="snap-center">
         <Skills skills={skills} />
       </section>
 
-
-      <section id='experience' className='snap-center'>
+      <section id="experience" className="snap-center">
         <WorkExperience experiences={experiences} />
       </section>
 
-
-      <section id="project" className='snap-center'>
+      <section id="project" className="snap-center">
         <Projects projects={projects} />
       </section>
 
-      <section id='contact' className='snap-end'>
+      {/* <section id="contact" className="snap-end">
         <ContactMe pageInfo={pageInfo} />
-      </section>
+      </section> */}
       {/* 
       <Link href="#hero">
         <footer className='sticky bottom-0 w-full cursor-pointer '>
@@ -78,11 +88,9 @@ export default function Home({ pageInfo, skills, projects, socials, experiences 
           </div>
         </footer>
       </Link> */}
-
     </div>
-  )
+  );
 }
-
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const pageInfo: PageInfo = await fetchPageInfo();
@@ -100,7 +108,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       socials,
     },
 
-    revalidate: 10
-  }
-
-}
+    revalidate: 10,
+  };
+};
